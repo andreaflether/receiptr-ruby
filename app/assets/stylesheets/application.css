@@ -1,3 +1,4 @@
 /*
- *= require bulma/css/bulma.min
+  *= require bulma/css/bulma.min
+  *= require_tree .
  */

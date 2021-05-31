@@ -1,0 +1,15 @@
+.truncated {
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
