@@ -1,0 +1,28 @@
+<nav class="navbar is-light" role="navigation">
+  <div class="navbar-brand" color="light">
+    <%= link_to root_path, class: 'navbar-item is-size-4 has-text-weight-bold' do %>
+      <%= image_tag 'logo.png', class: 'mr-3' %>
+      <%= t('main.app.name') %>
+    <% end %>
+  </div>
+  <div class="navbar-menu is-justify-content-flex-end">
+    <div class="column is-half">
+      <%= form_with(url: search_url, method: 'get') do |f| %>
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <%= f.text_field :query,
+              placeholder: 'Search for Album/Artist',
+              class: 'input',
+              required: true 
+            %>
+          </div>
+          <div class="control">
+            <%= button_tag class: 'button is-primary', name: nil do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</nav>
