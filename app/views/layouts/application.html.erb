@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Receiptr</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= display_meta_tags site: t('main.app.name'), 
+      keywords: 'receiptr, receipt, spotify, song sorter, album receipt, album sorter',
+      reverse: true,
+      twitter: { card: 'summary'},
+      og: {
+        title: :title,
+        site_name: :site, 
+        description: t('main.app.description'), 
+        image: asset_url('og_image')
+      },
+      viewport: 'width=device-width,initial-scale=1'
+    %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag 'favicon.ico' %>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <%= render 'layouts/navbar' %>
+      <main>
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

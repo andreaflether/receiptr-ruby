@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
 # Custom gems for this project
+gem 'meta-tags'
 gem 'rspotify'
 
 group :development, :test do
