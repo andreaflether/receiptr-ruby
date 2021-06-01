@@ -1,0 +1,15 @@
+<div class="card mb-4 mt-1 album-preview">
+<figure class="image is-1by1 is-covered">
+  <img 
+    src="<%= display_image(artist.images.first.try(:[], 'url'), 'artist') %>"
+    alt="<%= artist.name %> display picture"
+    class="is-rounded"
+  >
+
+</figure>
+  <div class="card-content has-text-centered pt-2 pb-3">
+    <h6 class="has-text-weight-semibold truncated">
+      <%= artist.name %>
+    </h6>
+  </div>
+</div>
