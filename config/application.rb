@@ -34,5 +34,11 @@ module Receiptr
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    # RSpotify authentication
+    RSpotify.authenticate(
+      Rails.application.credentials.spotify[:client][:id],
+      Rails.application.credentials.spotify[:client][:secret]
+    )
   end
 end
