@@ -1,0 +1,17 @@
+<h4 class="is-size-4 mb-3 has-text-weight-bold">Top Albums</h4>
+
+<% if @top_albums.nil? %>
+  <%= render 'common/message_block', 
+    message: t('could_not_display', 
+    resource: 'top albums', 
+    type: 'is-error')
+  %>
+<% else %>
+  <div class="columns is-mobile is-multiline">
+    <%= render partial: 'albums/album_preview',
+      layout: 'layouts/partials/column',
+      collection: @top_albums, 
+      as: :album_preview 
+    %>
+  </div>
+<% end %>

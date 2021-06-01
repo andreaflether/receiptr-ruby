@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
-  def home; end
+  def home
+    top_songs = RSpotify::Playlist.find('spotifycharts', '37i9dQZEVXbMDoHDwVN2tF')
+    @top_albums = top_songs.tracks
+                    .map(&:album)
+                    .select { |a| a.album_type == 'album' }
+                    .uniq!(&:name)
+                    .first(10)
+  end
 
   def search
     @results = RSpotify::Base.search(params[:query], 'artist, album')
