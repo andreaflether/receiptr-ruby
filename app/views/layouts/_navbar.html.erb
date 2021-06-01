@@ -13,7 +13,8 @@
             <%= f.text_field :query,
               placeholder: 'Search for Album/Artist',
               class: 'input',
-              required: true 
+              required: true,
+              value: params[:query] 
             %>
           </div>
           <div class="control">

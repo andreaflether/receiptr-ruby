@@ -4,7 +4,8 @@
     <%= display_meta_tags site: t('main.app.name'), 
       keywords: 'receiptr, receipt, spotify, song sorter, album receipt, album sorter',
       reverse: true,
-      twitter: { card: 'summary'},
+      twitter: { card: 'summary' },
+      separator: '/',
       og: {
         title: :title,
         site_name: :site, 
@@ -28,7 +29,11 @@
     <div id="wrapper">
       <%= render 'layouts/navbar' %>
       <main>
-        <%= yield %>
+        <section class="section">
+          <div class="container">
+            <%= yield %>
+          </div>
+        </section>
       </main>
       <%= render 'layouts/footer' %>
     </div>
