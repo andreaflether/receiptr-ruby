@@ -1,4 +1,5 @@
 /*
-  *= require bulma/css/bulma.min
-  *= require_tree .
- */
+ *= require bulma/css/bulma.min
+ *= require_self
+ *= require_tree .
+*/
