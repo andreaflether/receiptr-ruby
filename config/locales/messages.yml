@@ -1,0 +1,4 @@
+en:
+  search:
+    no_results: No %{resource} were found for the term you searched.
+    invalid: <b>Invalid search parameters were passed.</b> Please try again with a valid term.
