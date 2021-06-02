@@ -1,2 +1,38 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<div class="card">
+  <div class="card-content">
+    <div class="is-flex">
+      <figure class="image is-150x150">
+        <%= image_tag(display_image(@album.images.first.try(:[], 'url'), 'album')) %>
+      </figure>
+      <div class="album-info ml-5">
+        <h3 class="is-size-3 has-text-weight-bold">
+          <%= @album.name %>
+        </h3>
+        <p class="has-text-weight-semibold has-text-primary">
+          <%= @album.artists.map(&:name).join(', ') %>
+        </p>
+        <p class="mt-2 album-info has-text-grey">
+          <span>
+            <i class="fas fa-calendar fa-sm"></i>
+            <%= l(Date.parse(@album.release_date), format: :long) %>
+          </span>
+          <span>
+            <i class="fas fa-clock fa-sm"></i>
+            <%= distance_of_time_in_words(
+              album_length,
+              album_length(true),
+              true, highest_measures: 2, 
+              two_words_connector: ' ', 
+              compact: true
+            ) %>
+          </span>
+          <span>
+            <i class="fas fa-music fa-sm"></i>
+            <%= pluralize(@album.total_tracks, 'track') %>
+          </span>
+        </p>
+      </div>
+    </div>
+    <%= render 'albums/tracklist', tracks: @album.tracks %>
+  </div>
+</div>

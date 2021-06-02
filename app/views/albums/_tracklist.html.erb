@@ -1,0 +1,22 @@
+<table class="table is-hoverable is-fullwidth mt-4">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th><i class="fas fa-clock fa-sm"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tracks.each do |track| %>
+      <tr>
+        <td><%= track.track_number %></td>
+        <td><%= track.name %></td>
+        <td class="has-text-weight-semibold has-text-primary">
+          <%= track.artists.map(&:name).join(', ') %>
+        </td>
+        <td><%= get_formatted_track_length(track.duration_ms) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

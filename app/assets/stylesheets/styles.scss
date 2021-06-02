@@ -42,3 +42,20 @@ main {
   font-weight: 900 !important; 
   color: #363636 !important;
 }
+
+p.album-info span {
+  margin-right: 1.5rem;
+}
+
+p.album-info span i {
+  margin-right: 0.2rem;
+}
+
+.is-150x150 {
+  width: 150px;
+  height: 150px;
+}
+
+.turbolinks-progress-bar {
+  background-color: #FA643F;
+}
