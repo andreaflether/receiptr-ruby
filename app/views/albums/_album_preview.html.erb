@@ -1,17 +1,18 @@
-<div class="card mb-4 mt-1">
-  <figure class="image is-1by1 is-covered">
-    <img 
-      src="<%= display_image(album_preview.images.first.try(:[], 'url'), 'album') %>"
-      alt="<%= album_preview.name %> cover image"
-    >
-
-  </figure>
-  <div class="card-content pt-2 pb-3">
-    <h6 class="has-text-weight-semibold truncated">
-      <%= album_preview.name %>
-    </h6>
-    <p class="has-text-grey truncated">
-      <%= album_preview.artists.map(&:name).join(', ') %>
-    </p>
+<%= link_to album_path(album_preview.id) do %>
+  <div class="card mb-4 mt-1">
+    <figure class="image is-1by1 is-covered">
+      <img 
+        src="<%= display_image(album_preview.images.first.try(:[], 'url'), 'album') %>"
+        alt="<%= album_preview.name %> cover image"
+      >
+    </figure>
+    <div class="card-content pt-2 pb-3">
+      <h6 class="has-text-weight-semibold truncated">
+        <%= album_preview.name %>
+      </h6>
+      <p class="has-text-grey truncated">
+        <%= album_preview.artists.map(&:name).join(', ') %>
+      </p>
+    </div>
   </div>
-</div>
+<% end %>
