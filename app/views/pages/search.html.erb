@@ -2,25 +2,25 @@
 
 <h4 class="is-size-4 mb-3 has-text-weight-bold">Albums</h4>
 
-<% if @albums.nil? %>
-  <%= render 'common/message_block', 
-    message: t('search.no_results', resource: 'albums')
-  %>
-<% else %>
+<% if @albums.present? %>
   <div class="carousel">
     <%= render partial: 'albums/album_preview', collection: @albums, as: :album_preview %>
   </div>
+<% else %>
+  <%= render 'common/message_block', 
+    message: t('search.no_results', resource: 'albums')
+  %>
 <% end %>
 
 <h4 class="is-size-4 mb-3 has-text-weight-bold">Artists</h4>
 
-<% if @artists.nil? %>
-  <%= render 'common/message_block', 
-    message: t('search.no_results', resource: 'artists')
-  %>
-<% else %>
+<% if @artists.present? %>
   <div class="carousel">
     <%= render partial: 'artists/artist', collection: @artists, as: :artist %>
   </div>
+<% else %>
+  <%= render 'common/message_block', 
+    message: t('search.no_results', resource: 'artists')
+  %>
 <% end %>
 
