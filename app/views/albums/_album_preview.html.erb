@@ -11,6 +11,7 @@
         <%= album_preview.name %>
       </h6>
       <p class="has-text-grey truncated">
+        <%#= album_preview.artists.map { |artist| link_to(artist.name, artist.id) }.join(', ').html_safe  %>
         <%= album_preview.artists.map(&:name).join(', ') %>
       </p>
     </div>

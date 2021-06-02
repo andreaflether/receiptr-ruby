@@ -13,7 +13,7 @@
         <td><%= track.track_number %></td>
         <td><%= track.name %></td>
         <td class="has-text-weight-semibold has-text-primary">
-          <%= track.artists.map(&:name).join(', ') %>
+          <%= get_artists_link_collection(track.artists) %>
         </td>
         <td><%= get_formatted_track_length(track.duration_ms) %></td>
       </tr>

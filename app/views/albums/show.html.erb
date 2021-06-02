@@ -9,7 +9,7 @@
           <%= @album.name %>
         </h3>
         <p class="has-text-weight-semibold has-text-primary">
-          <%= @album.artists.map(&:name).join(', ') %>
+          <%= get_artists_link_collection(@album.artists)  %>
         </p>
         <p class="mt-2 album-info has-text-grey">
           <span>
