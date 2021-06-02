@@ -1,3 +1,6 @@
+<% title @album.name %>
+<% set_meta_tags og: { image: asset_url(display_image(@album.images.first.try(:[], 'url'), 'album')) } %>
+
 <div class="card">
   <div class="card-content">
     <div class="is-flex">
