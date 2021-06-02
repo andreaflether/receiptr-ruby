@@ -14,8 +14,10 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
 # Custom gems for this project
+gem 'dotiw'
 gem 'meta-tags'
 gem 'rspotify'
+gem 'ruby-duration'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
